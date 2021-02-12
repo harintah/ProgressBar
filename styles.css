@@ -1,0 +1,147 @@
+
+*{
+    
+    font-family: cursive;
+     /*only for layout look wise  */
+
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    padding: 25px 0;
+}
+
+.header-item {
+    width: 150px;
+    margin: 5px;
+}
+
+
+.header-text-desc {
+    color: #2990f1;
+}
+
+.meter {
+    height: 10px;
+    position: relative;
+    background: #e3e3e3;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.meter span {
+    display: block;
+    background-color: #1AD49D;
+    height: 100%;
+}
+
+.cards-wrapper {
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #0272FA;
+    border-radius: 5px;
+    padding: 30px 15px;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+    width: 100px;
+    color: #fff; 
+    position: relative;
+    
+}
+.card-info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.card:hover{
+    background-color:#1AD49D;  
+}
+.card img {
+    width: 40%;
+}
+.card-active{
+    background-color:#1AD49D;  
+}
+
+
+.progress {
+    position: relative;
+}
+
+.progress-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 30px;
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        justify-content: flex-start;
+    }
+}
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    width: 50px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.btn {
+background-color: #4CAF50;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+    border: #1AD49D 1px solid;
+    border-radius: 5px;
+  
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

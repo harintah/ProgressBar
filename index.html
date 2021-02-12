@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-item">
+            <div class="header-text">Loan No.</div>
+            <div class="header-text-desc">214325</div>
+        </div>
+        <div class="header-item">
+            <div class="header-text">Property Address</div>
+            <div class="header-text-desc">424,Hyderabad</div>
+        </div>
+        <div class="header-item">
+            <div class="header-text">Loan Purpose.</div>
+            <div class="header-text-desc">Purchase</div>
+        </div>
+        <div class="header-item">
+            <div class="header-text">Loan Amount</div>
+            <div class="header-text-desc">$420.000</div>
+        </div>
+        <div class="header-item ">
+            <div class="tooltip">
+                <span class="tooltiptext ">0%</span>
+            </div>
+            <div class="meter">
+                <span id='progressBar'>
+                    <span class="progress"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards-wrapper">
+
+        <div class="card" onclick='fillBar(15, event)'> <div class="card-info"><img src="assets/exclamation.png"></div><img src="assets/location.png" alt="location">
+            <p>Get Started</p>
+        </div>
+
+        <div class="card" onclick='fillBar(30, event)'> <div class="card-info"><img src="assets/exclamation.png"></div> <img src="assets/property.png" alt="propert">
+            <p>Property </p>
+        </div>
+
+        <div class="card" onclick='fillBar(45, event)'> <div class="card-info"><img src="assets/exclamation.png"></div> <img src="assets/income.png" alt="income">
+            <p>Income</p>
+        </div>
+
+        <div class="card" onclick='fillBar(70, event)'> <div class="card-info"><img src="assets/exclamation.png"></div> <img src="assets/real estate.png" alt="real esate">
+            <p>Real Estate</p>
+        </div>
+
+        <div class="card" onclick='fillBar(80, event)'> <div class="card-info"><img src="assets/exclamation.png"></div> <img src="assets/declarations.png" alt="declation">
+            <p>Declartion</p>
+        </div>
+
+        <div class="card" onclick='fillBar(100, event)'> <div class="card-info"><img src="assets/exclamation.png"></div> <img src="assets/e-concent.png" alt="concent">
+            <p>E content</p>
+        </div>
+    </div>
+    <div class="cards-wrapper">
+        <button type="button" id="submit" class="btn" onclick="onSubmit()">Submit</button>
+    </div>
+</body>
+<script>
+    fillBar(0);
+    function fillBar(fillArea, e) {
+        if (e) {
+            if (document.querySelector('.cards-wrapper div.card-active') !== null) {
+                document.querySelector('.cards-wrapper div.card-active').classList.remove('card-active');
+                document.querySelector('.cards-wrapper p').classList.remove('card-active');
+            }
+            e.target.classList.add('card-active');
+        }
+
+        var el = document.getElementById('progressBar')
+        el.style.width = fillArea + '%';
+
+        var progressTxt = document.getElementsByClassName('tooltiptext')
+        progressTxt[0].innerHTML = fillArea + '%'
+        progressTxt[0].style.left = fillArea + 'px'
+        autoDisabled();
+    }
+    function onSubmit() {
+        alert("SuccessFully Submitted");
+    }
+    function autoDisabled() {
+        document.getElementById("submit").disabled = document.getElementById('progressBar').offsetWidth < 140 ? true : false;
+    
+    }
+
+</script>
+
+</html>
